@@ -16,8 +16,6 @@ def try_out():
     
         skills = [skill.strip() for skill in skills]
         skills = [skill.lower() for skill in skills]
-        print("🐍 File: ml-jobs/try_out.py | Line: 18 | try_out ~ skills",skills)
-        
         
         test_skills = mlb.transform([skills])
         predicted_job = classifier.predict(test_skills)
