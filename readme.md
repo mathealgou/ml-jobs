@@ -4,6 +4,13 @@
 
 This project is a machine learning exercise, the application receives a set of skills from the user and returns a job title that matches the skills entered. It uses the [Random Forest algorithm](https://en.wikipedia.org/wiki/Random_forest) to make the prediction base on a [jobs dataset](https://www.kaggle.com/datasets/bishop36/jobs-data). You can also watch the [demo video](https://www.youtube.com/watch?v=TaRlhW6fiT4&ab_channel=MatheusGoulart).
 
+- [Job Searcher (Machine Learning exercise 🤖)](#job-searcher-machine-learning-exercise-)
+  - [📖 Description](#-description)
+  - [⚙️ Installation](#️-installation)
+    - [Requirements:](#requirements)
+    - [Steps:](#steps)
+  - [▶️ Usage](#️-usage)
+
 ## ⚙️ Installation
 
 ### Requirements:
@@ -14,15 +21,15 @@ You need to have [Python](https://www.python.org/downloads/) and [venv](https://
 
 1. Download and extract the project.
 
-1. Open a terminal and navigate to the project's directory. (Alternatively, navigate to the project's directory and open a terminal).
+2. Open a terminal and navigate to the project's directory. (Alternatively, navigate to the project's directory and open a terminal).
 
-1. Create a virtual environment with the following command:
+3. Create a virtual environment with the following command:
 
 ```bash
 python -m venv .venv
 ```
 
-1. Activate the virtual environment with the following command:
+4. Activate the virtual environment with the following command:
 
 Windows:
 
@@ -36,13 +43,13 @@ Linux:
 source .venv/bin/activate
 ```
 
-1. Install the project's dependencies with the following command:
+5. Install the project's dependencies with the following command:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-1. Run the application with the following command:
+6. Run the application with the following command:
 
 ```bash
 python main.py
@@ -66,7 +73,7 @@ Linux:
 source .venv/bin/activate
 ```
 
-1. Run the application with the following command:
+2. Run the application with the following command:
 
 ```bash
 python main.py
