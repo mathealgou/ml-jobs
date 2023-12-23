@@ -8,14 +8,13 @@ import warnings
 from fitness import get_fitness
 from try_out import try_out
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore") # Necessary to ignore warnings because of sklearn behavior (check https://stackoverflow.com/questions/72060723/i-am-having-a-userwarning-unknown-classes-when-using-multilabelbinarizer)
 
 
 TEST_DATA_PERCENTAGE = 0.05
 
 
 def main():
-    # look for finalised model and transformer
 	print("trying to load model and transformer from disk")
 
 	try:
@@ -45,10 +44,8 @@ def main():
 	print("training data length", len(train_data))
 	print("testing data length", len(test_data))
 
-
 	# convert skills to a binary matrix
 	skills = [skills.split(',') for skills in train_data['Skills']]
- 
  
 	mlb = MultiLabelBinarizer()
 	skills_binary = mlb.fit_transform(skills)
@@ -65,15 +62,12 @@ def main():
 
 
 	# test the model 
-	# get df with only skills and job name columns
 	test_data = test_data[['Skills', 'Job Name']]
 
 	# loop through each row and predict job name
 	fitness_scores = []
 	for index, row in test_data.iterrows():
 		test_skills = mlb.transform([row['Skills'].split(',')])
-		# ignore the warnings 
-
 		predicted_job = classifier.predict(test_skills)
 		fitness_score = get_fitness(predicted_job[0], row['Job Name']) * 100
 		fitness_scores.append(fitness_score)
